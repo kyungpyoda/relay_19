@@ -11,7 +11,7 @@
 
 회사 : 부동산114주식회사 
 
-https://files.slack.com/files-pri/T017VULDE49-F017RN5SVGA/_______________________________2020-07-27_________________11.28.29.png
+[사진 1](https://files.slack.com/files-pri/T017VULDE49-F017RN5SVGA/_______________________________2020-07-27_________________11.28.29.png)
 
 
 ## 천리안
@@ -26,9 +26,9 @@ https://files.slack.com/files-pri/T017VULDE49-F017RN5SVGA/______________________
 서버 프롬프트가 새롭게 나타나며 텍스트 기반 이메일 응용프로그램을 직접 실행시켜야 해서 UNIX 텍스트 콘솔 같았다.
 
 
-https://files.slack.com/files-pri/T017VULDE49-F017XTMQ8TE/155e684851121e5506.png
-https://files.slack.com/files-pri/T017VULDE49-F017QB7U885/214ae541559a24c323.gif
-https://files.slack.com/files-pri/T017VULDE49-F018FHGCMJ4/svinfo_con_04.gif
+[사진 2](https://files.slack.com/files-pri/T017VULDE49-F017XTMQ8TE/155e684851121e5506.png)   
+[사진 3](https://files.slack.com/files-pri/T017VULDE49-F017QB7U885/214ae541559a24c323.gif)  
+[사진 4](https://files.slack.com/files-pri/T017VULDE49-F018FHGCMJ4/svinfo_con_04.gif)  
 
 
 
@@ -50,14 +50,14 @@ https://files.slack.com/files-pri/T017VULDE49-F018FHGCMJ4/svinfo_con_04.gif
 전국 1만2천여개 학교의 데이터베이스를 보유
 
 출신학교와 졸업 연도별로 동창을 찾아주는 사람찾기 기능
-서비스 홈페이지 사진
-https://lh3.googleusercontent.com/proxy/Fr0EjxUmePhKWrTH2HwMs4qko8lJ1MvwN70yNNxnfTEhYH48n_Q_VCqXU7rf2xAv88Mr9JTORGPS2Dtm2dQDHmNh5mUi30YzWS07YDoLKXgrSNMtYKE_nSpie5B6eyIaqVjPBdVGhADjl1gMP5HkiABOaj_l1Q
+서비스 홈페이지 사진.  
+[사진 5](https://lh3.googleusercontent.com/proxy/Fr0EjxUmePhKWrTH2HwMs4qko8lJ1MvwN70yNNxnfTEhYH48n_Q_VCqXU7rf2xAv88Mr9JTORGPS2Dtm2dQDHmNh5mUi30YzWS07YDoLKXgrSNMtYKE_nSpie5B6eyIaqVjPBdVGhADjl1gMP5HkiABOaj_l1Q)
 
 ## 버디버디 채팅 프로그램
 2000년 1월 13일 오픈해 2012년 5월 25일 서비스가 종료
 서비스 회사는 버디버디 주식회사이지만, 이 회사를 위메이드가 100% 소유
-2004 년까지 전성기를 누렸는데, 그 후에 검열이 잘 안되어 음란물 관련 문제가 많이 터지면서 막장화가 진행되어 서비스 종료에 이르렀다.
- https://files.slack.com/files-pri/T017VULDE49-F0184B5AB2M/9a9037f45a2d587ee39c686a102f4aa139f07df9f0b5df775b960f6a9b17d1b3f46cbb4abaac7feb379ea7ca6c02dad5c6384707f5d74d643939f765ae26e40f3eec35a5f4ae494cc36d8d4974091f1edb764acb935d97a0a02414e3606a7902.jpeg
+2004 년까지 전성기를 누렸는데, 그 후에 검열이 잘 안되어 음란물 관련 문제가 많이 터지면서 막장화가 진행되어 서비스 종료에 이르렀다.  
+ [사진 6](https://files.slack.com/files-pri/T017VULDE49-F0184B5AB2M/9a9037f45a2d587ee39c686a102f4aa139f07df9f0b5df775b960f6a9b17d1b3f46cbb4abaac7feb379ea7ca6c02dad5c6384707f5d74d643939f765ae26e40f3eec35a5f4ae494cc36d8d4974091f1edb764acb935d97a0a02414e3606a7902.jpeg)
 
 ## windows CE
 그 당시 가장 많이 썼던 스마트폰 OS, 하지만 나중의 안드로이드/아이폰에 밀림
@@ -66,7 +66,7 @@ https://lh3.googleusercontent.com/proxy/Fr0EjxUmePhKWrTH2HwMs4qko8lJ1MvwN70yNNxn
 
 단점 :  구리고 불편한 ui
 
-https://files.slack.com/files-pri/T017VULDE49-F017RN5CTK4/image.png
+[사진 7](https://files.slack.com/files-pri/T017VULDE49-F017RN5CTK4/image.png)  
 
 ## 마이스페이스
 2000년대 초 미국에서 가장 인기있었던 SNS
@@ -85,8 +85,8 @@ https://files.slack.com/files-pri/T017VULDE49-F017RN5CTK4/image.png
 
 디자인을 계속 변경 -> 사용자에게 혼란을 줌
 
-채팅 기능 강화 -> 불건전한 만남 등 사용자에게 좋지 않은 인식을 줌
-https://files.slack.com/files-pri/T017VULDE49-F018FHJ535E/myspace.jpeg
+채팅 기능 강화 -> 불건전한 만남 등 사용자에게 좋지 않은 인식을 줌.  
+ [사진 8](https://files.slack.com/files-pri/T017VULDE49-F018FHJ535E/myspace.jpeg)  
 
 ## 소리바다
 2000년에 개발한 P2P 형식의 MP3 음악 공유 프로그램
@@ -114,5 +114,5 @@ https://files.slack.com/files-pri/T017VULDE49-F018FHJ535E/myspace.jpeg
 
 ## 전보/ 삐삐 / 차폰
 
-https://files.slack.com/files-pri/T017VULDE49-F017K0R91SS/_2020-07-27__11.02.35.png
+[사진 9](https://files.slack.com/files-pri/T017VULDE49-F017K0R91SS/_2020-07-27__11.02.35.png)
 
