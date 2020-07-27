@@ -17,12 +17,26 @@ https://files.slack.com/files-pri/T017VULDE49-F017QB7U885/214ae541559a24c323.gif
 https://files.slack.com/files-pri/T017VULDE49-F018FHGCMJ4/svinfo_con_04.gif
 
 ## r114
+서비스 : 부동산 매물 관리 사이트
+좋았던점 : 모든 사람들이 올라온 매물을 편하게 볼 수 있다.
+회사 : 부동산114주식회사 
 https://files.slack.com/files-pri/T017VULDE49-F017RN5SVGA/_______________________________2020-07-27_________________11.28.29.png
 
 ## 아이러브스쿨 : 동창찾기프로그램
 현재는 밴드가 비슷한 역할을 하고있다.
 장점 : 채팅이나 댓글등을 통해 바로바로 연락이 가능했고, 만남이 쉬워졌다.
 단점 : 참여한 사람끼리만 가능해서 참여하지 않은 사람들은 찾기 힘들다. / 찾고싶은 사람을 검색해서 안나오면 잘 이용을 안했다
+
+학연을 기반으로 한 인맥 구축 서비스.
+서비스 회사: 아이러브스쿨
+서비스 기간: 1999년 ~ 2017년 경
+학연을 중심으로 하는 한국인의 정서와 맞아 떨어지면서 거대한 동창회처럼 성장한 서비스. 졸업 이후 끊어진 옛 친구를 이어주고 친구들의 최근 근황도 알아볼 수 있었다.
+주요 기능
+회원가입은 입학하기, 로그인은 등교하기, 알림은 가정통신문, 이벤트는 학교 행사, 당일 접속회원은 등교생으로 표기하는 등 메뉴 하나하나가 학창시절의 향수를 자극
+전국 1만2천여개 학교의 데이터베이스를 보유
+출신학교와 졸업 연도별로 동창을 찾아주는 사람찾기 기능
+서비스 홈페이지 사진
+https://lh3.googleusercontent.com/proxy/Fr0EjxUmePhKWrTH2HwMs4qko8lJ1MvwN70yNNxnfTEhYH48n_Q_VCqXU7rf2xAv88Mr9JTORGPS2Dtm2dQDHmNh5mUi30YzWS07YDoLKXgrSNMtYKE_nSpie5B6eyIaqVjPBdVGhADjl1gMP5HkiABOaj_l1Q
 
 ## 버디버디 채팅 프로그램
 2000년 1월 13일 오픈해 2012년 5월 25일 서비스가 종료
