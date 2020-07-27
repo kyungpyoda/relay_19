@@ -1,5 +1,16 @@
 # relay_19
 
+## r114
+**정한 서비스**
+서비스 : 부동산 매물 관리 사이트
+
+좋았던점 : 모든 사람들이 올라온 매물을 편하게 볼 수 있다.
+
+회사 : 부동산114주식회사 
+
+https://files.slack.com/files-pri/T017VULDE49-F017RN5SVGA/_______________________________2020-07-27_________________11.28.29.png
+
+
 ## 천리안
 처음 인터넷이라는 것을 접했다.
 마치 무협지에 나오는 축지법을 쓰는것 같은 기분이었다고 함.
@@ -16,14 +27,7 @@ https://files.slack.com/files-pri/T017VULDE49-F017XTMQ8TE/155e684851121e5506.png
 https://files.slack.com/files-pri/T017VULDE49-F017QB7U885/214ae541559a24c323.gif
 https://files.slack.com/files-pri/T017VULDE49-F018FHGCMJ4/svinfo_con_04.gif
 
-## r114
-서비스 : 부동산 매물 관리 사이트
 
-좋았던점 : 모든 사람들이 올라온 매물을 편하게 볼 수 있다.
-
-회사 : 부동산114주식회사 
-
-https://files.slack.com/files-pri/T017VULDE49-F017RN5SVGA/_______________________________2020-07-27_________________11.28.29.png
 
 ## 아이러브스쿨 : 동창찾기프로그램
 현재는 밴드가 비슷한 역할을 하고있다.
