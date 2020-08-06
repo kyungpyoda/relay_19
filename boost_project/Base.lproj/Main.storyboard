@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dcz-9u-FrS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--챗봇-->
+        <scene sceneID="nR7-DW-YPb">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="OkZ-qQ-Zz1" customClass="ViewController" customModule="boost_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ej-fm-Rgu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4R4-fW-cNB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="챗봇" id="JFk-3A-ZnN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIW-at-gUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855.072463768116" y="-158.03571428571428"/>
+        </scene>
+        <!--부st동산-->
+        <scene sceneID="NLX-e5-aON">
+            <objects>
+                <viewController id="uNK-c4-gOY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ws-jL-ImU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-x0-qB5">
+                                <rect key="frame" x="106" y="347.5" width="202" height="316"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00k-Zh-qTz" customClass="ButtonCustom" customModule="boost_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="122"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="122" id="JOs-9V-vYE"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="202" id="Ym1-UC-vKM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="판매자">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-Y1-xIc" customClass="ButtonCustom" customModule="boost_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="194" width="202" height="122"/>
+                                        <color key="backgroundColor" red="0.41095769409999999" green="0.7673637271" blue="0.27435839179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="122" id="MHw-D8-xxw"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="202" id="Zy4-ad-Mpk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="구매자">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="OkZ-qQ-Zz1" kind="show" id="ncK-CY-ahw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sw0-x0-qB5" firstAttribute="centerY" secondItem="HLn-QJ-ddp" secondAttribute="centerY" id="bEa-zt-M4N"/>
+                            <constraint firstItem="sw0-x0-qB5" firstAttribute="centerX" secondItem="HLn-QJ-ddp" secondAttribute="centerX" id="qc5-Nj-NBv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HLn-QJ-ddp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="부st동산" id="iA9-zQ-EHU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCN-1D-Fol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937.68115942028987" y="-158.03571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uK2-KB-Mjt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dcz-9u-FrS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eSA-19-89p">
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uNK-c4-gOY" kind="relationship" relationship="rootViewController" id="sct-7A-Mmw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pTP-7C-n5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27.536231884057973" y="-158.03571428571428"/>
+        </scene>
+    </scenes>
+</document>
