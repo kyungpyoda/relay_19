@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-boost_project/Pods-boost_project-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/InputBarAccessoryView/InputBarAccessoryView.framework
+${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework
