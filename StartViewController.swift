@@ -11,6 +11,10 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let db = DBManager.getInstance()
+        NSLog("\(db)")
+        db.createDB()
 
         // Do any additional setup after loading the view.
     }
