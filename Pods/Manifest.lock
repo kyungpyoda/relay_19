@@ -1,4 +1,7 @@
 PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - InputBarAccessoryView (4.3.2):
     - InputBarAccessoryView/Core (= 4.3.2)
   - InputBarAccessoryView/Core (4.3.2)
@@ -6,17 +9,20 @@ PODS:
     - InputBarAccessoryView (~> 4.3.0)
 
 DEPENDENCIES:
+  - FMDB
   - MessageKit
 
 SPEC REPOS:
   trunk:
+    - FMDB
     - InputBarAccessoryView
     - MessageKit
 
 SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   InputBarAccessoryView: 7985d418040a05fe894bd4b8328dd43ab35517c3
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
 
-PODFILE CHECKSUM: 71b3d9ca0f85522ced02f9d47f110f2bdd82b95b
+PODFILE CHECKSUM: 8eb9baf0384ee6b3723f9d0b56b46b56b1aa0b9d
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
