@@ -15,6 +15,9 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
     var messages = [MessageType]()
     let db = DBManager.getInstance()
     
+    let messageBoxColor = UIColor(displayP3Red: 236/255, green: 230/255, blue: 204/255, alpha: 1)
+    let backgroundColor = UIColor(displayP3Red: 244/255, green: 241/255, blue: 234/255, alpha: 1)
+    
     func currentSender() -> SenderType {
         return currentUser
     }
@@ -27,9 +30,31 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
         return messages.count
     }
     
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        
+        return isFromCurrentSender(message: message) ? UIColor(displayP3Red: 227/255, green: 227/255, blue: 224/255, alpha: 1) : messageBoxColor
+    }
+    
+    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return UIColor.black
+    }
+    
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+      avatarView.isHidden = true
+    }
+    
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        
+        if message.messageId == "4" {
+            return 30
+        }
+        
+        return 5
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -37,6 +62,31 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
         
         messageInputBar.inputTextView.becomeFirstResponder()
         
+        messages.append(Message(sender: otherUser,
+        messageId: "4",
+        sentDate: Date(),
+        kind: .text("어떤 집을 찾아드릴까요?")))
+        
+        messagesCollectionView.reloadData()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupCollectionView()
+        self.navigationController?.navigationBar.barTintColor = backgroundColor
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        messageInputBar.backgroundView.backgroundColor = backgroundColor
+    }
+    
+    private func setupCollectionView() {
+            guard let flowLayout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout else {
+                NSLog("Can't get flowLayout")
+                return
+            }
+            if #available(iOS 13.0, *) {
+                flowLayout.collectionView?.backgroundColor = backgroundColor
+            }
     }
     
     @IBAction func sendAction(sender: UIButton){
@@ -46,6 +96,8 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
         messageId: "5",
         sentDate: Date(),
         kind: .text(inputData ?? "")))
+        
+       
         
         /*
          통신
@@ -96,6 +148,7 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
         //kind: .text("hi!")))
         messageInputBar.inputTextView.text = ""
         messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToBottom(animated: true)
         
     }
     

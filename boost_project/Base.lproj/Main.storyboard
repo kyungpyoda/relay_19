@@ -7,21 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--챗봇-->
+        <!--추천해주세요-->
         <scene sceneID="nR7-DW-YPb">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="OkZ-qQ-Zz1" customClass="ViewController" customModule="boost_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ej-fm-Rgu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="4R4-fW-cNB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="챗봇" id="JFk-3A-ZnN"/>
+                    <navigationItem key="navigationItem" title="추천해주세요" largeTitleDisplayMode="never" id="JFk-3A-ZnN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIW-at-gUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="467"/>
+            <point key="canvasLocation" x="1854" y="621"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="wFD-FB-FHL">
@@ -143,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="1853.6231884057972" y="-978.34821428571422"/>
         </scene>
-        <!--부st동산-->
+        <!--Start View Controller-->
         <scene sceneID="NLX-e5-aON">
             <objects>
                 <viewController id="uNK-c4-gOY" customClass="StartViewController" customModule="boost_project" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,11 +152,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-x0-qB5">
-                                <rect key="frame" x="106" y="347.5" width="202" height="316"/>
+                                <rect key="frame" x="106" y="240" width="202" height="316"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00k-Zh-qTz" customClass="ButtonCustom" customModule="boost_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="122"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.81176470588235294" green="0.63529411764705879" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="122" id="JOs-9V-vYE"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="202" id="Ym1-UC-vKM"/>
@@ -171,14 +171,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-Y1-xIc" customClass="ButtonCustom" customModule="boost_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="194" width="202" height="122"/>
-                                        <color key="backgroundColor" red="0.41095769409999999" green="0.7673637271" blue="0.27435839179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.90196078430000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="122" id="MHw-D8-xxw"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="202" id="Zy4-ad-Mpk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <state key="normal" title="구매자">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="OkZ-qQ-Zz1" kind="show" id="Za3-PF-qmI"/>
@@ -187,14 +187,15 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.94509803921568625" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sw0-x0-qB5" firstAttribute="centerY" secondItem="HLn-QJ-ddp" secondAttribute="centerY" id="bEa-zt-M4N"/>
-                            <constraint firstItem="sw0-x0-qB5" firstAttribute="centerX" secondItem="HLn-QJ-ddp" secondAttribute="centerX" id="qc5-Nj-NBv"/>
+                            <constraint firstItem="sw0-x0-qB5" firstAttribute="top" secondItem="HLn-QJ-ddp" secondAttribute="top" constant="100" id="7KH-Vy-ze6"/>
+                            <constraint firstItem="sw0-x0-qB5" firstAttribute="leading" secondItem="HLn-QJ-ddp" secondAttribute="leading" constant="106" id="GZ1-X3-ak3"/>
+                            <constraint firstItem="HLn-QJ-ddp" firstAttribute="trailing" secondItem="sw0-x0-qB5" secondAttribute="trailing" constant="106" id="t9M-1l-xKW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HLn-QJ-ddp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="부st동산" id="iA9-zQ-EHU"/>
+                    <navigationItem key="navigationItem" id="iA9-zQ-EHU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCN-1D-Fol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
