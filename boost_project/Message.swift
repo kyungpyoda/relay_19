@@ -23,5 +23,7 @@ struct Message: MessageType{
     var sentDate: Date
     
     var kind: MessageKind
+    
+    var item: RealEstateItem?
 }
 
