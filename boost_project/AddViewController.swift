@@ -25,6 +25,7 @@ class AddViewController: UIViewController {
     
     @IBOutlet var tf_area: UITextField!
     
+    @IBOutlet var tf_detail: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +65,18 @@ class AddViewController: UIViewController {
             db.insertKeyword(iid: insertedId, keyword: keyword)
         }
         
+        let detailSentence = tf_detail.text ?? ""
+        
+        let hashTags = detailSentence.getArrayAfterRegex(regex: "#[a-zA-Z0-9가-힣]+").map { (slice) in slice.replacingOccurrences(of: "#", with: "")
+        }
+        
+        for hashTag in hashTags {
+            db.insertKeyword(iid: insertedId, keyword: hashTag)
+        }
+        
+        
+        
         self.navigationController?.popViewController(animated: true)
-        
-        
-        
     }
     /*
     // MARK: - Navigation
@@ -79,4 +88,21 @@ class AddViewController: UIViewController {
     }
     */
 
+}
+
+extension String{
+    func getArrayAfterRegex(regex: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: self,
+                                        range: NSRange(self.startIndex..., in: self))
+            return results.map {
+                String(self[Range($0.range, in: self)!])
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
 }
