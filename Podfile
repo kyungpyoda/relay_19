@@ -7,7 +7,8 @@ target 'boost_project' do
   pod 'FMDB'	
   pod 'MessageKit'
   pod 'SwiftyJSON' 
-  pod 'Alamofire', '~> 5.1'
+  pod 'Alamofire'
+  pod 'TextFieldEffects'
 
   # Pods for boost_project
 

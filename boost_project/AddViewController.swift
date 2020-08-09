@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import TextFieldEffects
 
 // 매물 추가화면 뷰 컨트롤러
 
@@ -17,19 +18,24 @@ class AddViewController: UIViewController {
     var insertedId = 0
     var db : DBManager?
     
-    @IBOutlet var tf_address: UITextField!
+    @IBOutlet var tf_address: JiroTextField!
     @IBOutlet var sgc_type: UISegmentedControl!
-    @IBOutlet var tf_deposit: UITextField!
-    @IBOutlet var tf_monthlyPrice: UITextField!
-    @IBOutlet var tf_managementFee: UITextField!
-    @IBOutlet var tf_area: UITextField!
+    @IBOutlet var tf_deposit: JiroTextField!
+    @IBOutlet weak var tf_monthlyPrice: JiroTextField!
+    @IBOutlet var tf_managementFee: JiroTextField!
+    @IBOutlet var tf_area: JiroTextField!
     @IBOutlet var tf_detail: UITextField!
+    
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
         db = DBManager.getInstance()
         // Do any additional setup after loading the view.
+
     }
     
 
@@ -84,15 +90,15 @@ class AddViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func textFieldKeyboardWillShow(_ sender: UITextFieldCustom) {
+        self.view.frame.origin.y = -150
     }
-    */
+    
+    @IBAction func textFieldKeyboardWillHidden(_ sender: Any) {
+        self.view.frame.origin.y = 0
+    }
     
     func sendAPIRequest(with text: String){
         let gCloudAPIKey = "AIzaSyAUW0tQYuIOD-14WfCjqE1tki4yASLqzyc"

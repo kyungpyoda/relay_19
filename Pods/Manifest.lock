@@ -3,18 +3,20 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - InputBarAccessoryView (4.3.2):
-    - InputBarAccessoryView/Core (= 4.3.2)
-  - InputBarAccessoryView/Core (4.3.2)
+  - InputBarAccessoryView (4.3.3):
+    - InputBarAccessoryView/Core (= 4.3.3)
+  - InputBarAccessoryView/Core (4.3.3)
   - MessageKit (3.1.0):
     - InputBarAccessoryView (~> 4.3.0)
   - SwiftyJSON (5.0.0)
+  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.1)
+  - Alamofire
   - FMDB
   - MessageKit
   - SwiftyJSON
+  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
@@ -23,14 +25,16 @@ SPEC REPOS:
     - InputBarAccessoryView
     - MessageKit
     - SwiftyJSON
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  InputBarAccessoryView: 7985d418040a05fe894bd4b8328dd43ab35517c3
+  InputBarAccessoryView: 8e7fc09e9cba75e0fee5da13450e15c194806f69
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 3a9953591e6021723d16ffe4f24070bf980898f3
+PODFILE CHECKSUM: a444d0844cb858ca8cbd5bf6f31c078001a8344d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1
