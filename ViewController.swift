@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageKit
+import SwiftyJSON
+import Alamofire
 
 class ViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     let currentUser = Sender(senderId: "self", displayName: "iOS Academy")
@@ -109,13 +111,13 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
         kind: .text(inputData ?? "")))
         
        
-        
+        sendAPIRequest(with: inputData ?? "")
         /*
          통신
          input : inputData
          output : json 파싱 값
         */
-        
+        /*
         let keywords = APIManager.getKeywords(from: inputData ?? "")
         //var iidSet = Set<Int>()
         var iidDic = [Int:Int]()
@@ -152,6 +154,7 @@ class ViewController: MessagesViewController, MessagesDataSource, MessagesLayout
             sentDate: Date(),
             kind: .text("해당하는 매물을 찾을 수 없습니다.")))
         }
+        */
         
         //응답 메시지
         //messages.append(Message(sender: otherUser,
@@ -215,5 +218,92 @@ extension ViewController : MessageCellDelegate{
             (segue.destination as? DetailViewController)?.item = nextDetailItem
         }
     }
+    
+    func sendAPIRequest(with text: String){
+        let gCloudAPIKey = "AIzaSyAUW0tQYuIOD-14WfCjqE1tki4yASLqzyc"
+
+        print("Text: ", text)
+        let jsonRequest =
+            [
+                "document":[
+                    "type":"PLAIN_TEXT",
+                    "content":"\(text)"
+                ],
+                "encodingType":"UTF8"
+        ] as [String:Any]
+            
+
+        //let jsonObject = JSON(jsonRequest)
+
+    
+
+        let headers: HTTPHeaders = [
+            "X-Ios-Bundle-Identifier": "\(Bundle.main.bundleIdentifier ?? "") ",
+            "Content-Type": "application/json"
+        ]
+        
+        let _ = AF.request("https://language.googleapis.com/v1beta2/documents:analyzeEntities?key=\(gCloudAPIKey)", method: .post , parameters: jsonRequest as [String: Any], encoding: JSONEncoding.default , headers: headers).responseJSON { (response) in
+                //print(response)
+            var keywords = [String]()
+            if let JSON = response.value {
+                if let dictionary = JSON as? [String: Any] {
+                    if let entities = dictionary["entities"] as? NSArray{
+                        for entity in entities {
+                            if let item = entity as? [String:Any] {
+                                print(item["name"]! as! String)
+                                if let keyword = item["name"] {
+                                    //keywords.append(keyword as? String)
+                                    if let keywordString = keyword as? String {
+                                        keywords.append(keywordString)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            var iidDic = [Int:Int]()
+             for keyword in keywords {
+                let items = self.db.findByKeyword(keyword: keyword)
+                 
+                 for item in items {
+                     iidDic.updateValue((iidDic[item.iid] ?? 0) + 1, forKey: item.iid)
+                     //iidSet.update(with: item.iid)
+                 }
+             }
+             
+            let bestMatchID = self.getBestMatchs(iidDic)
+             
+            
+             var realEstateItems = [RealEstateItem]()
+             
+             for iid in bestMatchID {
+                let items = self.db.findByIID(iid: iid)
+                 realEstateItems.append(contentsOf: items)
+             }
+             
+             for item in realEstateItems {
+                self.messages.append(Message(sender: self.otherUser,
+                 messageId: "7",
+                 sentDate: Date(),
+                 kind: .text("\(item.address) "),
+                 item: item))
+             }
+            
+            if realEstateItems.count == 0 {
+                self.messages.append(Message(sender: self.otherUser,
+                messageId: "6",
+                sentDate: Date(),
+                kind: .text("해당하는 매물을 찾을 수 없습니다.")))
+            }
+            
+            self.messagesCollectionView.reloadData()
+            self.messagesCollectionView.scrollToBottom(animated: true)
+            
+            
+            }
+        }
     
 }

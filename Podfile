@@ -6,6 +6,8 @@ target 'boost_project' do
   use_frameworks!
   pod 'FMDB'	
   pod 'MessageKit'
+  pod 'SwiftyJSON' 
+  pod 'Alamofire', '~> 5.1'
 
   # Pods for boost_project
 
