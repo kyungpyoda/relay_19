@@ -14,23 +14,16 @@ import Alamofire
 
 class AddViewController: UIViewController {
 
-    
-    @IBOutlet var tf_address: UITextField!
-    
-    @IBOutlet var sgc_type: UISegmentedControl!
-    
-    @IBOutlet var tf_deposit: UITextField!
-    
-    @IBOutlet var tf_monthlyPrice: UITextField!
-    
-    @IBOutlet var tf_managementFee: UITextField!
-    
-    @IBOutlet var tf_area: UITextField!
-    
-    @IBOutlet var tf_detail: UITextField!
-    
     var insertedId = 0
     var db : DBManager?
+    
+    @IBOutlet var tf_address: UITextField!
+    @IBOutlet var sgc_type: UISegmentedControl!
+    @IBOutlet var tf_deposit: UITextField!
+    @IBOutlet var tf_monthlyPrice: UITextField!
+    @IBOutlet var tf_managementFee: UITextField!
+    @IBOutlet var tf_area: UITextField!
+    @IBOutlet var tf_detail: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,17 +55,14 @@ class AddViewController: UIViewController {
             item.type = ""
         }
         
-        //let db = DBManager.getInstance()
         insertedId = db?.insertRealEstateItem(item: item) ?? 0
-        
-        
         sendAPIRequest(with: item.address)
         
         if let detailText = tf_detail.text {
             sendAPIRequest(with: detailText)
         }
         
-        /*
+        /* API연결 전 데모 사용 부분
         
         let keywords = APIManager.getKeywords(from: item.address)
         
@@ -117,52 +107,43 @@ class AddViewController: UIViewController {
                 "encodingType":"UTF8"
         ] as [String:Any]
             
-
-        //let jsonObject = JSON(jsonRequest)
-
-    
-
         let headers: HTTPHeaders = [
             "X-Ios-Bundle-Identifier": "\(Bundle.main.bundleIdentifier ?? "") ",
             "Content-Type": "application/json"
         ]
         
         let _ = AF.request("https://language.googleapis.com/v1beta2/documents:analyzeEntities?key=\(gCloudAPIKey)", method: .post , parameters: jsonRequest as [String: Any], encoding: JSONEncoding.default , headers: headers).responseJSON { (response) in
-                //print(response)
+            
             var keywords = [String]()
-            if let JSON = response.value {
-                if let dictionary = JSON as? [String: Any] {
-                    if let entities = dictionary["entities"] as? NSArray{
-                        for entity in entities {
-                            if let item = entity as? [String:Any] {
-                                print(item["name"]! as! String)
-                                if let keyword = item["name"] {
-                                    //keywords.append(keyword as? String)
-                                    if let keywordString = keyword as? String {
-                                        keywords.append(keywordString)
-                                    }
-                                }
-                            }
+            
+            guard let JSON = response.value else { return }
+            
+            guard let jsonData = JSON as? [String: Any] else { return }
+            
+            guard let entities = jsonData["entities"] as? NSArray else { return }
+            
+            for entity in entities {
+                if let item = entity as? [String:Any] {
+                    if let keyword = item["name"] {
+                        if let keywordString = keyword as? String {
+                            keywords.append(keywordString)
                         }
                     }
                 }
             }
             
-            for keyword in keywords{
-                NSLog(keyword)
-            }
+            // API response 사용 부분, 별도 콜백메소드로 작성하면 좋을듯
             
             for keyword in keywords{
+                NSLog("Keyword: \(keyword)")
                 self.db?.insertKeyword(iid: self.insertedId, keyword: keyword)
             }
-            
-            
-            
             }
         }
 
 }
 
+/* API연결 전 데모 사용을 위한 해시태그 추출
 extension String{
     func getArrayAfterRegex(regex: String) -> [String] {
         
@@ -179,3 +160,4 @@ extension String{
         }
     }
 }
+*/

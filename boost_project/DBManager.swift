@@ -68,7 +68,7 @@ class DBManager : NSObject {
                         
                 NSLog("TABLE 생성 성공")
             }else{
-                NSLog("DB 객체 생성 실패")
+                NSLog("TABLE 생성 실패")
             }
         }
     }
