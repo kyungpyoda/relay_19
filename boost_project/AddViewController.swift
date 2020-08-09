@@ -7,29 +7,28 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 // 매물 추가화면 뷰 컨트롤러
 
 class AddViewController: UIViewController {
 
+    var insertedId = 0
+    var db : DBManager?
     
     @IBOutlet var tf_address: UITextField!
-    
     @IBOutlet var sgc_type: UISegmentedControl!
-    
     @IBOutlet var tf_deposit: UITextField!
-    
     @IBOutlet var tf_monthlyPrice: UITextField!
-    
     @IBOutlet var tf_managementFee: UITextField!
-    
     @IBOutlet var tf_area: UITextField!
-    
     @IBOutlet var tf_detail: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        db = DBManager.getInstance()
         // Do any additional setup after loading the view.
     }
     
@@ -56,13 +55,19 @@ class AddViewController: UIViewController {
             item.type = ""
         }
         
-        let db = DBManager.getInstance()
-        let insertedId = db.insertRealEstateItem(item: item)
+        insertedId = db?.insertRealEstateItem(item: item) ?? 0
+        sendAPIRequest(with: item.address)
+        
+        if let detailText = tf_detail.text {
+            sendAPIRequest(with: detailText)
+        }
+        
+        /* API연결 전 데모 사용 부분
         
         let keywords = APIManager.getKeywords(from: item.address)
         
         for keyword in keywords{
-            db.insertKeyword(iid: insertedId, keyword: keyword)
+            db?.insertKeyword(iid: insertedId, keyword: keyword)
         }
         
         let detailSentence = tf_detail.text ?? ""
@@ -71,9 +76,10 @@ class AddViewController: UIViewController {
         }
         
         for hashTag in hashTags {
-            db.insertKeyword(iid: insertedId, keyword: hashTag)
+            db?.insertKeyword(iid: insertedId, keyword: hashTag)
         }
         
+        */
         
         
         self.navigationController?.popViewController(animated: true)
@@ -87,9 +93,57 @@ class AddViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func sendAPIRequest(with text: String){
+        let gCloudAPIKey = "AIzaSyAUW0tQYuIOD-14WfCjqE1tki4yASLqzyc"
+
+        print("Text: ", text)
+        let jsonRequest =
+            [
+                "document":[
+                    "type":"PLAIN_TEXT",
+                    "content":"\(text)"
+                ],
+                "encodingType":"UTF8"
+        ] as [String:Any]
+            
+        let headers: HTTPHeaders = [
+            "X-Ios-Bundle-Identifier": "\(Bundle.main.bundleIdentifier ?? "") ",
+            "Content-Type": "application/json"
+        ]
+        
+        let _ = AF.request("https://language.googleapis.com/v1beta2/documents:analyzeEntities?key=\(gCloudAPIKey)", method: .post , parameters: jsonRequest as [String: Any], encoding: JSONEncoding.default , headers: headers).responseJSON { (response) in
+            
+            var keywords = [String]()
+            
+            guard let JSON = response.value else { return }
+            
+            guard let jsonData = JSON as? [String: Any] else { return }
+            
+            guard let entities = jsonData["entities"] as? NSArray else { return }
+            
+            for entity in entities {
+                if let item = entity as? [String:Any] {
+                    if let keyword = item["name"] {
+                        if let keywordString = keyword as? String {
+                            keywords.append(keywordString)
+                        }
+                    }
+                }
+            }
+            
+            // API response 사용 부분, 별도 콜백메소드로 작성하면 좋을듯
+            
+            for keyword in keywords{
+                NSLog("Keyword: \(keyword)")
+                self.db?.insertKeyword(iid: self.insertedId, keyword: keyword)
+            }
+            }
+        }
 
 }
 
+/* API연결 전 데모 사용을 위한 해시태그 추출
 extension String{
     func getArrayAfterRegex(regex: String) -> [String] {
         
@@ -106,3 +160,4 @@ extension String{
         }
     }
 }
+*/

@@ -9,6 +9,7 @@
 import Foundation
 
 // API를 이용한 키워드 추출 역할 데모
+// API사용 성공했으므로 불필요
 
 class APIManager {
     
