@@ -29,6 +29,8 @@
 		C18FFDA724D3F20E00CFB955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18FFDA624D3F20E00CFB955 /* Assets.xcassets */; };
 		C18FFDAA24D3F20E00CFB955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18FFDA824D3F20E00CFB955 /* LaunchScreen.storyboard */; };
 		D804FD47710330BBE6D58FD2 /* Pods_boost_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66E392F41D6EDE150AD6F0 /* Pods_boost_project.framework */; };
+		F466646824E655F7007BEF7D /* UIImage+save.swift in Sources */ = {isa = PBXBuildFile; fileRef = F466646724E655F7007BEF7D /* UIImage+save.swift */; };
+		F466646A24E664E2007BEF7D /* FurnitureOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F466646924E664E2007BEF7D /* FurnitureOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		C18FFDA924D3F20E00CFB955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C18FFDAB24D3F20E00CFB955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC053329825465C91A7E2544 /* Pods-boost_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-boost_project.debug.xcconfig"; path = "Target Support Files/Pods-boost_project/Pods-boost_project.debug.xcconfig"; sourceTree = "<group>"; };
+		F466646724E655F7007BEF7D /* UIImage+save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+save.swift"; sourceTree = "<group>"; };
+		F466646924E664E2007BEF7D /* FurnitureOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureOptions.swift; sourceTree = "<group>"; };
 		FD66E392F41D6EDE150AD6F0 /* Pods_boost_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_boost_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,7 @@
 				C13A118624D70818006F8F36 /* Message.swift */,
 				9903C8A524DD5A5E008D0171 /* Item_KeywordVO.swift */,
 				9903C8A724DD5EFF008D0171 /* RealEstateItem.swift */,
+				F466646924E664E2007BEF7D /* FurnitureOptions.swift */,
 			);
 			name = VO;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				9965995224DD3D71007039C2 /* DBManager.swift */,
 				9903C8A224DD47AD008D0171 /* boost_project-Bridging-Header.h */,
 				9903C8AB24DD6E76008D0171 /* APIManager.swift */,
+				F466646724E655F7007BEF7D /* UIImage+save.swift */,
 				4C091FAD24E66FAB00B2D595 /* Color.xcassets */,
 				4C091FAF24E677B700B2D595 /* Furniture.swift */,
 			);
@@ -278,9 +284,11 @@
 				996F2F7224DE5BBC00BBF88D /* DetailViewController.swift in Sources */,
 				C18FFDA024D3F20700CFB955 /* SceneDelegate.swift in Sources */,
 				9903C8AC24DD6E76008D0171 /* APIManager.swift in Sources */,
+				F466646A24E664E2007BEF7D /* FurnitureOptions.swift in Sources */,
 				C1858C6624DC46C60074AF3B /* ButtonCustom.swift in Sources */,
 				4C091FB024E677B700B2D595 /* Furniture.swift in Sources */,
 				C13A118524D6D412006F8F36 /* ViewController.swift in Sources */,
+				F466646824E655F7007BEF7D /* UIImage+save.swift in Sources */,
 				4C091FAB24E664AF00B2D595 /* FurnitureTableViewCell.swift in Sources */,
 				9903C8A824DD5EFF008D0171 /* RealEstateItem.swift in Sources */,
 				C1858C6A24DC497D0074AF3B /* StartViewController.swift in Sources */,

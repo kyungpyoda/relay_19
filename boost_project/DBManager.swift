@@ -18,7 +18,7 @@ class DBManager : NSObject {
     private static var database : DBManager?
     
     var dbPath : String = ""
-    let dbName : String = "boost.db"
+    let dbName : String = "boost1.db"
     
     var docPath : String = ""
     let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -41,7 +41,9 @@ class DBManager : NSObject {
             + " DepositPrice INTEGER , "
             + " MonthlyPrice INTEGER , "
             + " ManagementFee INTEGER , "
-            + " Area INTEGER"
+            + " Area INTEGER , "
+            + " ImageName TEXT , "
+            + " FurnitureOptions INTEGER"
             + ")"
         
         let createItem_KeywordTableQuery : String = "CREATE TABLE IF NOT EXISTS ItemKeyword ( "
@@ -75,7 +77,7 @@ class DBManager : NSObject {
     
     public func insertRealEstateItem(item : RealEstateItem) -> Int {
         var createdId = 0
-        let sqlInsert : String = "INSERT INTO RealEstateItem (Address, Type, Struct, DepositPrice, MonthlyPrice, ManagementFee, Area) VALUES ('\(item.address)' , '\(item.type)' , '\(item.structType)' , '\(item.depositPrice)' , '\(item.monthlyPrice)' , '\(item.managementFee)' , '\(item.area)')"
+        let sqlInsert : String = "INSERT INTO RealEstateItem (Address, Type, Struct, DepositPrice, MonthlyPrice, ManagementFee, Area, ImageName, FurnitureOptions) VALUES ('\(item.address)' , '\(item.type)' , '\(item.structType)' , '\(item.depositPrice)' , '\(item.monthlyPrice)' , '\(item.managementFee)' , '\(item.area)' , '\(item.imageName)' , '\(item.furnitureOptions)')"
 
         if let db = database {
             //DB 열기
@@ -137,7 +139,9 @@ class DBManager : NSObject {
                     item.monthlyPrice = Int(rs.int(forColumn: "MonthlyPrice"))
                     item.managementFee = Int(rs.int(forColumn: "ManagementFee"))
                     item.area = Int(rs.int(forColumn: "Area"))
-                    
+                    // imageName이 "" 이면 큰일남!
+                    item.imageName = rs.string(forColumn: "ImageName")!
+                    item.furnitureOptions = Int(rs.int(forColumn: "FurnitureOptions"))
                     itemList.append(item)
                 }
             }

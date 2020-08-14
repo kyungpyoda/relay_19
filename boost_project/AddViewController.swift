@@ -61,8 +61,25 @@ class AddViewController: UIViewController {
             item.type = ""
         }
         
+        // DB Insert Test
+//        let imageName = "logo"
+//
+//        let uniqueName = String(Date().timeIntervalSinceNow)
+//        UIImage(named:imageName)!.save(uniqueName)
+//
+//        item.imageName = uniqueName
+//        let options = FurnitureOptions.makeOptions(set: Set<String>(arrayLiteral: "냉장고"))
+//        item.furnitureOptions = options.rawValue
+
         insertedId = db?.insertRealEstateItem(item: item) ?? 0
         sendAPIRequest(with: item.address)
+
+        // DB Find Test
+//        let ite2m = (db?.findByIID(iid: insertedId)[0].imageName)!
+//        let uiimage = UIImage.load(ite2m)
+//        let imageView  = UIImageView(frame:CGRect(x: 10, y: 50, width: 100, height: 300));
+//        imageView.image = uiimage
+//        view.addSubview(imageView)
         
         if let detailText = tf_detail.text {
             sendAPIRequest(with: detailText)
