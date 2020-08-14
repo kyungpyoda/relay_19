@@ -23,13 +23,15 @@ class DetailViewController: UIViewController {
     @IBOutlet var lbl_ManagementFee: UILabel!
     
     @IBOutlet var lbl_Struct: UILabel!
+    @IBOutlet weak var realImageView: UIImageView!
     
+    @IBOutlet weak var optionsLabel: UILabel!
     
     override func viewDidLoad() {
         NSLog("상세뷰 켜짐")
         super.viewDidLoad()
         
-        lbl_Address.text = item.address
+        lbl_Address.text = "주소: \(item.address)"
         
         lbl_Type.text = item.type
         
@@ -38,6 +40,8 @@ class DetailViewController: UIViewController {
         lbl_ManagementFee.text = "\(item.managementFee) 만원"
         
         lbl_Struct.text = item.structType
+
+        realImageView.image = UIImage.load(item.imageName)
         
         if item.monthlyPrice == 0 {
             lbl_Price.text = "\(item.depositPrice)"
@@ -52,6 +56,9 @@ class DetailViewController: UIViewController {
         } else {
             lbl_Struct.text = "분리형 원룸"
         }
+        
+        let furnitureList = FurnitureOptions.makeArray(options: FurnitureOptions.init(rawValue: item.furnitureOptions))
+        optionsLabel.text = furnitureList.map{ "#\($0)" }.joined(separator: "\n\n")
 
         // Do any additional setup after loading the view.
     }
@@ -67,4 +74,20 @@ class DetailViewController: UIViewController {
     }
     */
 
+}
+
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return FurnitureOptions.makeArray(options: FurnitureOptions.init(rawValue: item.furnitureOptions)).count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        
+        return cell
+    }
+    
+    
 }

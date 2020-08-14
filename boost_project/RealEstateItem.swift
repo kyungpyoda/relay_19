@@ -10,7 +10,6 @@ import Foundation
 
  // 매물 아이템 테이블 Column , 옵션들은 매물아이템 ID - 옵션 테이블을 생성해서 별도로 저장
 class RealEstateItem {
-   
     var id : Int = 0
     var address : String = ""
     var type : String = ""
