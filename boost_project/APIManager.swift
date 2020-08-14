@@ -14,7 +14,13 @@ struct DetectedObject: Codable {
 struct Objects: Codable {
   var detection_names: [String]
   var detection_scores: [Double]
+  var detection_boxes: [[Double]]
 }
+struct DetectedBox {
+    var name: String
+    var points: [Double]
+}
+
 class APIManager {
   let koreanMap = ["chair":"의자", "couch":"소파", "bed":"침대", "dining table":"식사테이블", "tv":"TV모니터", "microwave":"전자레인지", "oven":"오븐", "refrigerator":"냉장고"]
    
@@ -22,7 +28,7 @@ class APIManager {
   private init() {}
    
    
-  func requestDetectionWith(endUrl: String, imageData: Data?, onCompletion: @escaping (([String]) -> Void)){
+  func requestDetectionWith(endUrl: String, imageData: Data?, onCompletion: @escaping (([String], [(String, [Double])]) -> Void)){
     guard let imageData = imageData else { return }
     let headers: HTTPHeaders = [
       "X-NCP-APIGW-API-KEY-ID": "6d2ujbq6pp",
@@ -48,20 +54,21 @@ class APIManager {
         case .success(let value):
           do {
             let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+            print(data)
             let detectedObject = try JSONDecoder().decode(DetectedObject.self, from: data)
-             
+            
             let objects = detectedObject.predictions.map {$0!.detection_names}.first!
-            let scores = detectedObject.predictions.map {$0!.detection_scores}.first!
-            var processedData = [String]()
-            for (name, score) in zip(objects, scores) {
-                print(name, score)
-//              if score > 0.95 {
-//                processedData.append(name)
-//              }
-                processedData.append(name)
-            }
-            let objectSet = Set(processedData).map {self.koreanMap[$0] ?? ""}.filter {$0 != ""}
-            onCompletion(objectSet)
+//            let scores = detectedObject.predictions.map {$0!.detection_scores}.first!
+            let boxes = detectedObject.predictions[0]!.detection_boxes
+            let labeledBoxes: [(String,[Double])] = zip(objects, boxes)
+                .compactMap { (object, box) in
+                    guard let korean = self.koreanMap[object] else {
+                        return nil
+                    }
+                    return (korean, box)
+                }
+            let objectSet = Set(objects).map {self.koreanMap[$0] ?? ""}.filter {$0 != ""}
+            onCompletion(objectSet, labeledBoxes)
           } catch {
             print(error.localizedDescription)
           }

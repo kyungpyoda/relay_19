@@ -200,16 +200,22 @@ UINavigationControllerDelegate{
 //
 //        insertedId = db?.insertRealEstateItem(item: item) ?? 0
         
-        if let image = info[.originalImage] as? UIImage {
+        if var image = info[.originalImage] as? UIImage {
             let imagePath = "\(Date().timeIntervalSince1970)"
             realEstateItem?.imageName = imagePath
             
             let urlString = "https://naveropenapi.apigw.ntruss.com/vision-obj/v1/detect"
             let data = image.jpegData(compressionQuality: 1)
-            APIManager.shared.requestDetectionWith(endUrl: urlString, imageData: data) { (furnitureList) in
+            APIManager.shared.requestDetectionWith(endUrl: urlString, imageData: data) { furnitureList, detectedBoxes in
                 self.furnitureList = furnitureList.map { Furniture(name: $0) }
+                for (name, box) in detectedBoxes {
+                    image = image.drawRectangle(text: name, box: box)
+                }
+                DispatchQueue.main.async {
+                    image.save(imagePath)
+                    self.imageView.image = image
+                }
             }
-            image.save(imagePath)
             imageView.image = image
         }
         dismiss(animated: true, completion: nil)
