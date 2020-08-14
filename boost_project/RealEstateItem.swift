@@ -19,5 +19,4 @@ class RealEstateItem {
     var monthlyPrice : Int = 0
     var managementFee : Int = 0
     var area : Int = 0
-    
 }

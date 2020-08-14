@@ -48,7 +48,7 @@ class AddViewController: UIViewController {
         item.monthlyPrice = Int(tf_monthlyPrice.text ?? "0") ?? 0
         item.managementFee = Int(tf_managementFee.text ?? "0") ?? 0
         item.area = Int(tf_area.text ?? "0") ?? 0
-        
+        print(item)
         switch sgc_type.selectedSegmentIndex {
             
         case 0 :
