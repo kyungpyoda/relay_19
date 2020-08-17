@@ -21,7 +21,7 @@
 - [키워드 추출](https://github.com/boostcamp-2020/relay_19/wiki/week2_relay19)
 - [쿼리 요청](https://github.com/boostcamp-2020/relay_19/wiki/week2_relay19)
 
-## [Week3](https://github.com/boostcamp-2020/relay_19)
+## [Week3](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19)
 ### 참여자
 
 > 조정래, 김승언, 고세림, 홍경표, 최철웅, 현기엽, 김근수, 박태희, 이지원, 조경환, 조기현, 홍동현
