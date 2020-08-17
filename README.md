@@ -1,6 +1,6 @@
 # relay_19
 
-# [‼️ 3주차 릴프 데모데이 보러가기 👋](https://github.com/boostcamp-2020/relay_19)
+# [‼️ 3주차 릴프 데모데이 보러가기 👋](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19)
 
 ## Week1
 ### 참여자
@@ -28,4 +28,6 @@
 
 ### [비전/영상 처리] - [Object Detection을 활용한 집 안 가구 옵션 자동 입력]
 
-
+- [UI](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19#ui-팀의-개발-과정)
+- [API](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19#api-팀의-개발-과정)
+- [DB](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19#db-팀의-개발-과정)
