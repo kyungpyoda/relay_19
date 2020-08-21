@@ -99,7 +99,6 @@ class AddImageViewController: UIViewController {
     ]
     
     let _ = AF.request("https://language.googleapis.com/v1beta2/documents:analyzeEntities?key=\(gCloudAPIKey)", method: .post , parameters: jsonRequest as [String: Any], encoding: JSONEncoding.default , headers: headers).responseJSON { (response) in
-        
         var keywords = [String]()
         
         guard let JSON = response.value else { return }
@@ -216,6 +215,7 @@ UINavigationControllerDelegate{
                     self.imageView.image = image
                 }
             }
+            
             imageView.image = image
         }
         dismiss(animated: true, completion: nil)

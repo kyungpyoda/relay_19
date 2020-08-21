@@ -31,9 +31,9 @@ class APIManager {
   func requestDetectionWith(endUrl: String, imageData: Data?, onCompletion: @escaping (([String], [(String, [Double])]) -> Void)){
     guard let imageData = imageData else { return }
     let headers: HTTPHeaders = [
-      "X-NCP-APIGW-API-KEY-ID": "6d2ujbq6pp",
-      "X-NCP-APIGW-API-KEY" : "8b5KNBSFVKFMa3b8udEv792oOtFpOame8dKur2UF",
-      "Content-Type": "multipart/form-data"
+        "X-NCP-APIGW-API-KEY-ID" : "jpo9s7cs7p",
+        "X-NCP-APIGW-API-KEY" : "ufHgoGEJOd59qFt3HyBImp09LwXGKK986h5joA8J",
+        "Content-Type": "multipart/form-data"
     ]
      
     // let image: UIImage = UIImage(named: "test.png")!

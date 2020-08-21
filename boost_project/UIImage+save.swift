@@ -18,10 +18,12 @@ extension UIImage {
     }
     
     static func load(_ name: String) -> UIImage {
+        print("---------\(name)--------")
         let path: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let url = URL(fileURLWithPath: path).appendingPathComponent(name)
+        print(url)
         let ret = try! UIImage(data: Data(contentsOf: url))!
-        print("saved image at \(url)")
+        print("load image from \(url)")
         return ret
     }
 }
