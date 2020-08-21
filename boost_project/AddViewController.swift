@@ -38,9 +38,9 @@ class AddViewController: UIViewController {
 
     }
     
-
-    @IBAction func btnCommit(_ sender: UIBarButtonItem) {
-        
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let item = RealEstateItem()
         
         item.address = tf_address.text ?? ""
@@ -48,7 +48,7 @@ class AddViewController: UIViewController {
         item.monthlyPrice = Int(tf_monthlyPrice.text ?? "0") ?? 0
         item.managementFee = Int(tf_managementFee.text ?? "0") ?? 0
         item.area = Int(tf_area.text ?? "0") ?? 0
-        
+        print(item)
         switch sgc_type.selectedSegmentIndex {
             
         case 0 :
@@ -61,8 +61,58 @@ class AddViewController: UIViewController {
             item.type = ""
         }
         
-        insertedId = db?.insertRealEstateItem(item: item) ?? 0
-        sendAPIRequest(with: item.address)
+        if let detailText = tf_detail.text {
+            sendAPIRequest(with: detailText)
+        }
+        
+        if let destVC = segue.destination as? AddImageViewController {
+            destVC.realEstateItem = item
+        }
+    }
+    
+
+    @IBAction func btnCommit(_ sender: UIBarButtonItem) {
+        
+//        let item = RealEstateItem()
+//
+//        item.address = tf_address.text ?? ""
+//        item.depositPrice = Int(tf_deposit.text ?? "0") ?? 0
+//        item.monthlyPrice = Int(tf_monthlyPrice.text ?? "0") ?? 0
+//        item.managementFee = Int(tf_managementFee.text ?? "0") ?? 0
+//        item.area = Int(tf_area.text ?? "0") ?? 0
+//        print(item)
+//        switch sgc_type.selectedSegmentIndex {
+//
+//        case 0 :
+//            item.type = "전세"
+//        case 1 :
+//            item.type = "월세"
+//        case 2 :
+//            item.type = "매매"
+//        default :
+//            item.type = ""
+//        }
+        
+        // DB Insert Test
+//        let imageName = "logo"
+
+        
+//        let uniqueName = String(Date().timeIntervalSinceNow)
+//        UIImage(named:imageName)!.save(uniqueName)
+//
+//        item.imageName = uniqueName
+//        let options = FurnitureOptions.makeOptions(set: Set<String>(arrayLiteral: "냉장고"))
+//        item.furnitureOptions = options.rawValue
+//
+//        insertedId = db?.insertRealEstateItem(item: item) ?? 0
+//        sendAPIRequest(with: item.address)
+
+        // DB Find Test
+        let ite2m = (db?.findByIID(iid: insertedId)[0].imageName)!
+        let uiimage = UIImage.load(ite2m)
+        let imageView  = UIImageView(frame:CGRect(x: 10, y: 50, width: 100, height: 300));
+        imageView.image = uiimage
+        view.addSubview(imageView)
         
         if let detailText = tf_detail.text {
             sendAPIRequest(with: detailText)
@@ -88,7 +138,7 @@ class AddViewController: UIViewController {
         */
         
         
-        self.navigationController?.popViewController(animated: true)
+        // self.navigationController?.popViewController(animated: true)
     }
     
     
