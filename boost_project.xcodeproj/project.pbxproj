@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24D604D524EFAA2300FDFE27 /* BoostDongsan 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 24D604D324EFAA2300FDFE27 /* BoostDongsan 2.mlmodel */; };
+		24D604D624EFAA2300FDFE27 /* RealEstateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D604D424EFAA2300FDFE27 /* RealEstateModel.swift */; };
+		24D604D924EFAEF200FDFE27 /* NaverMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D604D824EFAEF200FDFE27 /* NaverMapAPI.swift */; };
 		4C091FA924E657F300B2D595 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C091FA824E657F300B2D595 /* AddImageViewController.swift */; };
 		4C091FAB24E664AF00B2D595 /* FurnitureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C091FAA24E664AF00B2D595 /* FurnitureTableViewCell.swift */; };
 		4C091FAE24E66FAB00B2D595 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C091FAD24E66FAB00B2D595 /* Color.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24D604D324EFAA2300FDFE27 /* BoostDongsan 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BoostDongsan 2.mlmodel"; sourceTree = "<group>"; };
+		24D604D424EFAA2300FDFE27 /* RealEstateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealEstateModel.swift; sourceTree = "<group>"; };
+		24D604D824EFAEF200FDFE27 /* NaverMapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapAPI.swift; sourceTree = "<group>"; };
 		4C091FA824E657F300B2D595 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 		4C091FAA24E664AF00B2D595 /* FurnitureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureTableViewCell.swift; sourceTree = "<group>"; };
 		4C091FAD24E66FAB00B2D595 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -98,6 +104,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		24D604D224EFAA1900FDFE27 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				24D604D324EFAA2300FDFE27 /* BoostDongsan 2.mlmodel */,
+				24D604D424EFAA2300FDFE27 /* RealEstateModel.swift */,
+			);
+			name = ML;
+			sourceTree = "<group>";
+		};
+		24D604D724EFAEE100FDFE27 /* NaverMapAPI */ = {
+			isa = PBXGroup;
+			children = (
+				24D604D824EFAEF200FDFE27 /* NaverMapAPI.swift */,
+			);
+			name = NaverMapAPI;
+			sourceTree = "<group>";
+		};
 		9941F4A924DFB8FA009C8D75 /* VO */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +166,8 @@
 		C18FFD9C24D3F20700CFB955 /* boost_project */ = {
 			isa = PBXGroup;
 			children = (
+				24D604D724EFAEE100FDFE27 /* NaverMapAPI */,
+				24D604D224EFAA1900FDFE27 /* ML */,
 				F47ACF6424E6B68200ADEB04 /* extensions */,
 				9941F4AA24DFB929009C8D75 /* ViewController */,
 				9941F4A924DFB8FA009C8D75 /* VO */,
@@ -290,11 +315,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9903C8AA24DD6804008D0171 /* AddViewController.swift in Sources */,
+				24D604D924EFAEF200FDFE27 /* NaverMapAPI.swift in Sources */,
 				C18FFD9E24D3F20700CFB955 /* AppDelegate.swift in Sources */,
 				C13A118724D70818006F8F36 /* Message.swift in Sources */,
 				996F2F7224DE5BBC00BBF88D /* DetailViewController.swift in Sources */,
 				C18FFDA024D3F20700CFB955 /* SceneDelegate.swift in Sources */,
 				9903C8AC24DD6E76008D0171 /* APIManager.swift in Sources */,
+				24D604D624EFAA2300FDFE27 /* RealEstateModel.swift in Sources */,
 				F466646A24E664E2007BEF7D /* FurnitureOptions.swift in Sources */,
 				C1858C6624DC46C60074AF3B /* ButtonCustom.swift in Sources */,
 				4C091FB024E677B700B2D595 /* Furniture.swift in Sources */,
@@ -304,6 +331,7 @@
 				9903C8A824DD5EFF008D0171 /* RealEstateItem.swift in Sources */,
 				F47ACF6324E6B67700ADEB04 /* UIImage+CG.swift in Sources */,
 				C1858C6A24DC497D0074AF3B /* StartViewController.swift in Sources */,
+				24D604D524EFAA2300FDFE27 /* BoostDongsan 2.mlmodel in Sources */,
 				9965995324DD3D71007039C2 /* DBManager.swift in Sources */,
 				9903C8A624DD5A5E008D0171 /* Item_KeywordVO.swift in Sources */,
 				4C091FA924E657F300B2D595 /* AddImageViewController.swift in Sources */,

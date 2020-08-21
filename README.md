@@ -31,3 +31,13 @@
 - [UI](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19#ui-팀의-개발-과정)
 - [API](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19#api-팀의-개발-과정)
 - [DB](https://github.com/boostcamp-2020/relay_19/wiki/week3_relay19#db-팀의-개발-과정)
+
+## [Week4]
+### 참여자
+
+> 강병영, 권지웅, 김석호, 김신우, 박재현, 장지석, 정택현, 조인택, 최동규, 허경영, 홍경표
+
+### [테이블 값 데이터] - [거래가 예측 시스템]
+
+- [UI]
+- [예측 모델]
